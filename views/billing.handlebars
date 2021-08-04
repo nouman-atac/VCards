@@ -1,0 +1,92 @@
+<div class="row1">
+    <form method="post" action="/paynow">
+        <div class="row top-content">
+            <div class="col-8 float-left">
+                <label for="cardname">Card Name:<h3 class="cardname" id="cardname">{{doc.card_name}}</h3></label>
+            </div>
+            <div class="col-4 float-right">
+                <label for="cardcost">Cost:<h3 id="cardcost" class="cardcost">&#8377;{{doc.card_cost}}/card</h3></label>
+            </div>
+        </div>
+        <input type="hidden" name="email" value="{{data.email}}">
+        <input type="hidden" name="mobile" value="{{data.mobile}}">
+        <input type="hidden" name="name" value="{{data.name1}}">
+        <input type="hidden" name="address" value="{{data.address}}">
+        <input type="hidden" name="profession" value="{{data.profession}}">
+        <input type="hidden" name="website" value="{{data.website}}">
+        <input type="hidden" name="card_id" value="{{data.card_id}}">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Quantity:</label>
+            </div>
+            <div class="col-md-5">
+                <input type="number" min="100"name="quantity"  oninput="totalAmount({{doc.card_cost}});" id="quantity" value="100">
+                <p class="text text-white"><small>Minimum 100 Cards</small></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Delivery Address:</label>
+            </div>
+            <div class="col-md-5">
+                <textarea id="deliveryaddr" name="delivery_address" ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>City:</label>
+            </div>
+            <div class="col-md-5">
+                <select id="city" name="city">
+                    <option value="">Select</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="navimumbai">Navi Mumbai</option>
+                    <option value="pune">Pune</option>
+                    <option value="thane">Thane</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>State:</label>
+            </div>
+            <div class="col-md-5">
+                <select id="state" name="state">
+                    <option value="">Select</option>
+                    <option value="maharashtra">Maharashtra</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Country:</label>
+            </div>
+            <div class="col-md-5">
+                <select id="country" name="country">
+                    <option value="">Select</option>
+                    <option value="india">India</option>
+                </select>
+            </div>
+        </div>
+        <div class="line">
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Total Cost:</label>
+            </div>
+            <div class="col-md-5">
+                <h4>&#8377;<span class="total-amount">500</span></h4>
+            </div>
+        </div>
+        <div class="column-content">
+            <button id="proceed" class="submit" value="Proceed" >Proceed</button>
+        </div>
+    </form>
+</div>
+
+<script src="js/billing.js"></script>
+<script> 
+    window.onload=totalAmount({{doc.card_cost}});
+
+</script>

@@ -1,0 +1,151 @@
+
+<div class="container-fluid my-5 d-flex justify-content-center">
+        <div class="card card-1">
+            {{#if orders}}
+
+            <div class="card-header bg-white">
+                <div class="media flex-sm-row flex-column-reverse justify-content-between ">
+                    <div class="col my-auto">
+                        <h4 class="mb-0">Thanks for your Order,<span class="change-color">{{doc.cname}}</span> !</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-body">
+                {{!-- <div class="row justify-content-between mb-3">
+                    <div class="col-auto">
+                        <h6 class="color-1 mb-0 change-color">Receipt</h6>
+                    </div>
+                    <div class="col-auto "> <small>Receipt Voucher : 1KAU9-84UIL</small> </div>
+                </div> --}}
+                {{#each orders}}
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="card card-2">
+                            <div class="card-body">
+                                <div class="media">
+                                    <div class="sq align-self-center "> <img class="img-fluid my-auto align-self-center mr-2 mr-md-4 pl-0 p-0 m-0" src="uploaded/card_images/{{this.card.0.card_img}}" width="135" height="135" /> </div>
+                                    <div class="media-body my-auto text-right">
+                                        <div class="row my-auto flex-column flex-md-row">
+                                            <div class="col-auto my-auto">
+                                                <h6 class="mb-0">{{this.card.0.card_name}}</h6>
+                                            </div>
+                                            {{!-- <div class="col-auto my-auto"> <small>400GSM Thick Cards</small></div> --}}
+                                            <div class="col-auto my-auto"> <small>Quantity : {{this.quantity}}</small></div>
+                                            <div class="col-auto my-auto">
+                                                <h6 class="mb-0">&#8377;{{this.amount}}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-3 ">
+                                {{!-- <div class="r-button">
+                                    <button class="delete">Remove</button>
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                {{!-- <div class="row mt-4">
+                    <div class="col">
+                        <div class="card card-2">
+                            <div class="card-body">
+                                <div class="media">
+                                    <div class="sq align-self-center "> <img class="img-fluid my-auto align-self-center mr-2 mr-md-4 pl-0 p-0 m-0" src="22513_prev_ui.png" width="135" height="135" /> </div>
+                                    <div class="media-body my-auto text-right">
+                                        <div class="row my-auto flex-column flex-md-row">
+                                            <div class="col-auto my-auto ">
+                                                <h6 class="mb-0">Name 2</h6>
+                                            </div>
+                                            <div class="col-auto my-auto "> <small>Tyvek Visiting Cards</small></div>
+                                            <div class="col-auto my-auto "> <small>Qty : 200</small></div>
+                                            <div class="col-auto my-auto ">
+                                                <h6 class="mb-0">&#8377;599.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-3">
+                                <div class="r-button">
+                                    <button class="delete">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+                {{else}}
+                    <div class="card-header bg-white">
+                        <div class="media flex-sm-row flex-column-reverse justify-content-between ">
+                            <div class="col my-auto">
+                                <h4 class="mb-0">No this Yet!</h4>
+                            </div>
+                        </div>
+                    </div>
+                {{/if}}
+                
+                
+                {{!-- <div class="row mt-4">
+                    <div class="col">
+                        <div class="row justify-content-between">
+                            <div class="col-auto">
+                                <p class="mb-1 text-dark"><b>Order Details</b></p>
+                            </div>
+                            <div class="flex-sm-col text-right col">
+                                <p class="mb-1"><b>Total</b></p>
+                            </div>
+                            <div class="flex-sm-col col-auto">
+                                <p class="mb-1">&#8377;1,398</p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between">
+                            <div class="flex-sm-col text-right col">
+                                <p class="mb-1"> <b>Discount</b></p>
+                            </div>
+                            <div class="flex-sm-col col-auto">
+                                <p class="mb-1">&#8377;0</p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between">
+                            <div class="flex-sm-col text-right col">
+                                <p class="mb-1"><b>GST 18%</b></p>
+                            </div>
+                            <div class="flex-sm-col col-auto">
+                                <p class="mb-1">&#8377;252</p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between">
+                            <div class="flex-sm-col text-right col">
+                                <p class="mb-1"><b>Delivery Charges</b></p>
+                            </div>
+                            <div class="flex-sm-col col-auto">
+                                <p class="mb-1">Free</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row invoice ">
+                    <div class="col">
+                        <p class="mb-1"> Invoice Number : 788152</p>
+                        <p class="mb-1">Invoice Date : 22 Dec,2019</p>
+                        <p class="mb-1">Recepits Voucher:1KAU9-84UIL</p>
+                    </div>
+                </div> --}}
+            </div>
+            
+            {{!-- <div class="card-footer">
+                <div class="jumbotron-fluid">
+                    <div class="row justify-content-between ">
+                        <div class="col-sm-auto col-auto my-auto"><img class="img-fluid my-auto align-self-center " src="logo.png" width="150" height="150"></div>
+                        <div class="col-auto my-auto ">
+                            <h2 class="mb-0 font-weight-bold">TOTAL PAID</h2>
+                        </div>
+                        <div class="col-auto my-auto ml-auto">
+                            <h1 class="display-3 ">&#8377; 1,650</h1>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+        </div>
+    </div>
+    

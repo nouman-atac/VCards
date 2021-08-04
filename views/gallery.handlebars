@@ -1,0 +1,17 @@
+<div class="d-flex flex-column">
+    <div class="d-flex p-2 justify-content-around  mb-2" style="margin-top: 70px;">
+    {{#each card}}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="uploaded\card_images\\{{this.card_img}}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{this.card_name}}  {{@index}}</h5>
+                <p class="card-text">Cost /card :Rs {{this.card_cost}}</p>
+                <p class="card-text"> {{this.card_description}} </p>
+                <a href="/cardview?id={{this.card_id}}" class="btn btn-primary">Order</a>
+            </div>
+        </div>
+        
+        
+        {{/each}}
+    </div>
+</div>

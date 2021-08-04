@@ -1,0 +1,145 @@
+<div class="row1" style="margin-block-start: 40px;">
+    <div class="col-md-2">
+        <div class="d-flex flex-column p-3 text-white bg-dark">
+            {{!-- <img src="logo.png" class="logo"> --}}
+            <hr>
+            <ul class="nav nav-pills flex-column">
+                <li>
+                    <a href="/admin/dashboard" class="nav-link text-white {{#if card}}active{{/if}}" aria-current="page">Visiting Cards</a>
+                </li>
+                {{!-- <li>
+                    <a href="sidebar1.html" class="nav-link text-white">Pending Orderds</a>
+                </li>
+                <li>
+                    <a href="sidebar2.html" class="nav-link text-white">Orders Completed</a>
+                </li>
+                <li> --}}
+                    <a href="/admin/orders" class="nav-link text-white {{#if orders}}active{{/if}}">Orders</a>
+                </li>
+                
+                    <a href="/admin/addcard" class="btn btn-rounded btn-success mt-2">+Add Card</a>
+                
+        {{!-- <button class="">+Add</button> --}}
+                
+            </ul>
+            <hr>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="icons8-person-64.png" width="40" height="40" class="rounded-circle"><span>Admin</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Log Out</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <table id="cardtable">
+            {{!-- <tr>
+                <th>Sr.No</th>
+                <th>Cards</th>
+                <th>Card Name</th>
+                <th>Cost</th>
+                <th>Delete</th>
+            </tr>
+            {{#each card}}
+                <tr>
+                    <td> {{}} </td>
+                    <td><img src="uploaded/card_images/{{this.card_img}}" alt="card image"></td>
+                    <td>{{this.card_name}}</td>
+                    <td>&#8377;{{this.card_cost}}</td>
+                    <td><button class="deletebutton">Delete</button></td>
+                </tr> --}}
+            
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Date</th>
+                    <th>Customer Email</th>
+                    <th>Customer Name</th>
+                    <th>Card Name</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                    {{!-- <th>Action</th> --}}
+                </tr>
+                {{#each orders}}
+                <tr>
+                    <td>{{@index}}</td>
+                    <td>{{this.date}}</td>
+                    <td>{{this.customer.0.email}}</td>
+                    <td>{{this.customer.0.name}}</td>
+                    <td>{{this.card.0.card_name}}</td>
+                    <td>{{this.quantity}}</td>
+                    <td>&#8377;{{this.amount}}</td>
+                    {{!-- <td><i class="fa fa-check" title="Completed"></i></td> --}}
+                </tr>
+                {{/each}}
+            {{!-- <tr>
+                <td>2</td>
+                <td><img src="card_images/2.jpg" alt="card image"></td>
+                <td>Nmae2</td>
+                <td>&#8377;5</td>
+                <td><button class="deletebutton">Delete</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><img src="card_images/3.jpg" alt="card image"></td>
+                <td>Nmae3</td>
+                <td>&#8377;5</td>
+                <td><button class="deletebutton">Delete</button></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><img src="card_images/4.jpg" alt="card image"></td>
+                <td>Nmae4</td>
+                <td>&#8377;5</td>
+                <td><button class="deletebutton">Delete</button></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><img src="card_images/5.jpg" alt="card image"></td>
+                <td>Nmae5</td>
+                <td>&#8377;5</td>
+                <td><button class="deletebutton">Delete</button></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><img src="card_images/6.jpg" alt="card image"></td>
+                <td>Nmae6</td>
+                <td>&#8377;5</td>
+                <td><button class="deletebutton">Delete</button></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><img src="card_images/7.jpg" alt="card image"></td>
+                <td>Nmae7</td>
+                <td>&#8377;5</td>
+                <td><button class="deletebutton">Delete</button></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><img src="card_images/8.jpg" alt="card image"></td>
+                <td>Nmae8</td>
+                <td>&#8377;5</td>
+                <td><button class="deletebutton">Delete</button></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><img src="card_images/9.jpg" alt="card image"></td>
+                <td>Nmae9</td>
+                <td>&#8377;5</td>
+                <td><button class="deletebutton">Delete</button></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><img src="card_images/10.jpg" alt="card image"></td>
+                <td>Nmae10</td>
+                <td>&#8377;5</td>
+                <td><button class="deletebutton">Delete</button></td>
+            </tr> --}}
+        </table>
+    </div>
+</div>
+
+<script src="js/sidebar.js"></script>

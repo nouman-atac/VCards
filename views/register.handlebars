@@ -1,0 +1,39 @@
+
+{{#if msg}}
+        <div class="alert alert-warning alert-dismissible fade show" style="margin-top:50px;" role="alert">
+            <p class="text-center" style="padding:0px;">{{msg}}</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+{{/if}}
+
+    <div class="container"  style="margin-top: 100px;">
+
+
+        <form class="form-signin" action="/register" method="post">
+        <img class="mb-4" src="img\sign-form.png" alt="" width="90" height="85">
+        <h1 class="h3 mb-3 font-weight-normal">Please Register Here</h1>
+        
+        <label for="inputfname" class="sr-only">First Name</label>
+        <input type="text" name="inputfname" class="form-control" placeholder="First Name" required><br>
+       
+        <label for="inputlname" class="sr-only">Last Name</label>
+        <input type="text" name="inputlname" class="form-control" placeholder="Last Name" required><br>
+       
+        <label for="inputmobile" class="sr-only">Mobile Number</label>
+        <input type="tel"  name="inputmobile" class="form-control" placeholder="Mobile Number" required><br>
+        
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name="inputEmail" class="form-control" placeholder="Email address" required><br>
+       
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="inputPassword" class="form-control" placeholder="Password" required><br>
+       
+        <label for="inputConfPassword" class="sr-only">Password</label>
+        <input type="password" name="inputConfPassword" class="form-control" placeholder="Confirm" required><br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        <a href="/login">Already Register? Sign In</a>
+    </form>
+
+    </div>

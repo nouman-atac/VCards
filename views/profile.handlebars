@@ -1,0 +1,86 @@
+<div class="container emp-profile">
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="{{#if doc.profile_pic}}uploaded/user_profile/{{doc.profile_pic}}{{else}}img\default-user.png{{/if}}" alt="" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-head">
+                    <h5>
+                    {{#if doc.name}} {{doc.name}} {{else}} Not Provided {{/if}}
+                    </h5>
+                    <h6>
+                        {{#if doc.profession}} {{doc.profession}} {{else}} Not Provided {{/if}}
+                    </h6>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <label class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <a href="/editprofile">Edit Profile</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <p>{{#if doc.name}} {{doc.name}} {{else}} Not Provided {{/if}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <p>{{#if doc.email}} {{doc.email}} {{else}} Not Provided {{/if}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Phone:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <p>{{#if doc.mobile_no}} {{doc.mobile_no}} {{else}} Not Provided {{/if}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Profession:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <p>{{#if doc.profession}} {{doc.profession}} {{else}} Not Provided {{/if}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Website:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <p>{{#if doc.website}} {{doc.website}} {{else}} Not Provided {{/if}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Address:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <p>{{#if doc.address}} {{doc.address}} {{else}} Not Provided {{/if}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

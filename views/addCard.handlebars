@@ -1,0 +1,65 @@
+
+{{#if msg}}
+<div class="alert alert-warning alert-dismissible fade show" style="margin-top:50px;" role="alert">
+ <p class="text-center" style="padding:0px;">{{msg}}</p>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/if}}
+<div class="d-flex p-4 justify-content-center">
+    <div class="d-flex p-4 justify-content-center addcard-form-div">
+        <form action="/admin/addcard" method="POST" enctype="multipart/form-data" onsubmit="return validate();" class=" d-flex flex-column p-2 justify-content-center  addcard-form">
+
+            <div class="form-group">
+                <img src="img\default-thumbnail.jpg" class="img-fluid" id="output" alt="Responsive image">
+            </div>
+            <div class="form-group">
+                <label for="card_image">Card Image</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" class="card_image" name="card_image" id="validatedCustomImage" required>
+                    <label class="custom-file-label image-label" for="validatedCustomFile">Choose file...</label>
+                    <div class="invalid-feedback">File must be an image</div>
+                </div>  
+            </div>
+            
+
+            <div class="form-group ">
+                <label for="card_name">Card Name</label>
+                <input type="text" name="card_name" class="form-control" id="card_name" required>
+            </div>
+            <div class="form-group">
+                <label for="card_category">Card Category</label>
+                <select class="form-control" name="card_category">
+                    <option value="">Category select</option>
+                    <option value="Business">Business</option>
+                    <option value="Service">Service</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="card_name">Card Cost</label>
+                <input type="number" min="1" name="card_cost" class="form-control" id="card_cost" required>
+            </div>
+             <div class="form-group mb-4">
+                <label for="description">Card Description</label>
+                <textarea class="form-control description" rows="5" name="description" id="description" required></textarea>
+            </div> 
+            <div class="form-group">
+                <label for="card_file">Card File</label>
+                <div class="custom-file">
+                <input type="file" class="custom-file-input" name="card_file" id="validatedCustomFile" required>
+                <label class="custom-file-label file-label" for="validatedCustomFile">Choose file...</label>
+                <div class="invalid-feedback">File must be of .html</div>
+            </div>
+            </div>
+            <div class="form-group mt-4">
+                <input class="form-control btn btn-success" type="submit" value="Add Card">
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="js/addcard.js"></script>
+    
+
+

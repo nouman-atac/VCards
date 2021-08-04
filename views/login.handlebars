@@ -1,0 +1,29 @@
+
+{{#if msg}}
+        <div class="alert alert-warning alert-dismissible fade show" style="margin-top:50px;" role="alert">
+            <p class="text-center" style="padding:0px;">{{msg}}</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+{{/if}}
+
+<div class="container">
+    <form class="form-signin" action="/login" method="POST">
+        <img class="mb-4" src="img/icons8-login.gif" alt="" width="90" height="85">
+        <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+        
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name="inputEmail" class="form-control" placeholder="Email address" required><br>
+        
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="inputPassword" class="form-control" placeholder="Password" required>
+        {{!-- <div class="checkbox mb-3"><br>
+            <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        </div> --}}
+        <button class="btn btn-lg btn-primary btn-block mt-4" type="submit">Sign in</button>
+        <a href="/register">New User? Register here</a>
+    </form>
+</div>

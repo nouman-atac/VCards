@@ -1,0 +1,95 @@
+<div class="container emp-profile">
+    <form action="/editprofile" enctype="multipart/form-data" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <img src="img/default-user.png" id="img_display" alt="" />
+                    <div class="file btn btn-lg btn-primary">
+                        Change Photo
+                        <input type="file" id="profile_image" name="image" />
+                    </div>
+                    <p class="image_name text"></p>
+                </div>
+            </div>
+            {{!-- <div class="col-md-6">
+                <div class="profile-head">
+                    <input type="text" class="name" placeholder="Name*" required><br>
+                    <input type="text" class="proff" placeholder="Proffession">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <label class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</label>
+                        </li>
+                    </ul>
+                </div>
+            </div> --}}
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" name="name" class="name" value="{{#if doc.name}} {{doc.name}} {{else}}{{/if}}" placeholder="Name*" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="email" id="email" class="email" value="{{#if doc.email}} {{doc.email}} {{else}}{{/if}}" disabled >
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Date Of Birth:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="date" name="dob" class="mnumber" value="{{#if doc.dob}} {{doc.dob}} {{else}}{{/if}}" placeholder="0123456789*" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Mobile:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="tel" pattern="[0-9]{10}" name="mobile" class="mnumber" value="{{#if doc.mobile_no}}{{doc.mobile_no}}{{else}}{{/if}}" placeholder="0123456789*" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Profession:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" name="profession" class="proff" value="{{#if doc.profession}} {{doc.profession}} {{else}}{{/if}}" placeholder="Eg.Student,Businessman">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Website:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" name="website" class="web" value="{{#if doc.website}} {{doc.website}} {{else}}{{/if}}" placeholder="abcd.com">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Address:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <textarea name="address" class="addr" aria-valuetext="" placeholder="type here">{{#if doc.address}} {{doc.address}} {{else}}{{/if}}</textarea>
+                            </div>
+                        </div>
+                        <input type="submit" id="submit" class="submit" value="Save Changes">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="js/editprofile.js"></script>

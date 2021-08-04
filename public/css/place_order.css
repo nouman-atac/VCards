@@ -1,0 +1,117 @@
+/* body {
+    display: block;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+} */
+
+.column {
+    float: left;
+    width: 33.33%;
+    height: 1100px;
+    background-color: rgb(49, 49, 49);
+    color: white;
+}
+
+.column-content {
+    padding-bottom: 40px;
+}
+
+.column1 {
+    float: left;
+    width: 66.66%;
+    height: 1100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(161, 161, 161);
+    overflow: hidden;
+    margin: auto;
+}
+
+form {
+    box-sizing: border-box;
+    width: 500px;
+    padding-top: 30px;
+    position: relative;
+    text-align: center;
+}
+
+input,
+textarea {
+    width: 400px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    padding: 12px;
+    transition: border 0.5s;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+input:focus,
+textarea:focus {
+    border: solid 3px rgb(4, 177, 27);
+}
+
+textarea {
+    height: 100px;
+    overflow: auto;
+    resize: none;
+}
+
+input[type="submit"] {
+    background-color: rgb(4, 177, 27);
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+label {
+    font-size: 1.3em;
+    text-align: left;
+}
+
+/* @media (max-width: 1000px) {
+    .column1 {
+        width: 100%;
+        margin: auto;
+    }
+    .container1,
+    .card {
+        width: 100%;
+        margin: auto;
+    }
+    .column,
+    form {
+        width: 100%;
+    }
+} */
+
+.container1 {
+    width: 800px;
+    height: 340px;
+    margin: auto;
+    margin-top: 20%;
+    /* position: relative; */
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    perspective: 1000;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-perspective-origin: right;
+    -moz-perspective-origin: right;
+    perspective-origin: right;
+}
+
+.danger-shadow{
+    /* box-shadow: 0 .5rem 1rem rgba(240, 47, 47, 0.9); */
+
+
+    
+    background-color: rgba(248, 131, 131, 0.9) ;
+}

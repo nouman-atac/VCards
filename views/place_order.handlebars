@@ -1,0 +1,85 @@
+<div class="d-flex mt-4 p-2 justify-content-around">
+    
+        
+    
+    <div class="column">
+        {{#if msg}}
+        <div class="alert alert-warning alert-dismissible fade show" style="margin-top:50px;" role="alert">
+        <p class="text-center" style="padding:0px;">{{msg}}</p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        {{/if}}
+        <form action="/order" method="post">
+            <input type="hidden" name="card_id" value="{{doc.card_id}}">
+            <div class="column-content">
+                <label for="name1">Name:</label><br>
+                <input type="text"  name="name1" id="name1"  placeholder="Full Name" required><br>
+            </div>
+            <div class="column-content">
+                <label for="email">E-mail Id:</label><br>
+                <input type="email"  name="email" id="email" placeholder="user@domain.com" required><br>
+            </div>
+            <div class="column-content">
+                <label for="mobile">Mobile Number:</label><br>
+                <input type="number"   name="mobile" id="mobile" placeholder="0123456789" required><br>
+            </div>
+            <div class="column-content">
+                <label for="profession">Profession:</label><br>
+                <input type="text"  name="profession" id="profession"><br>
+            </div>
+            <div class="column-content">
+                <label for="web">Website:</label><br>
+                <input type="text"  name="website" id="website" placeholder="abcd.com"><br>
+            </div>
+            <div class="column-content">
+                <label for="addr">Address:</label><br>
+                <textarea  name="address" id="address"></textarea><br>
+            </div>
+            <div class="column-content">
+                <input type="submit" class="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <div class="column1">
+        <div class="d-flex p-2 justify-content-around bg-white" style="height: 200px;width: 100%;">
+            <div>
+                <p class="text-dark"> Card Name: {{doc.card_name}}</p>
+
+                <p class="text-dark"> Card Category: {{doc.card_category}}</p>
+            </div>
+            <div>
+                <label> Card Cost: Rs. {{doc.card_cost}}/card</label>
+
+                <!-- <p class="text-dark"> Card Name:</p> -->
+            </div>
+            <!-- <div>
+                <label> Card Name:</label>
+            </div> -->
+        </div>
+        <div class="container1 " id="card-html" >
+            <iframe src="uploaded/card_files/{{doc.card_file}}" id="frame" height="500px" width="700px" frameborder="0"></iframe>
+            
+                
+            
+            <!-- card end -->
+        </div>
+    </div>
+
+</div>
+
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>
+    
+window.jQuery || document.write('<script src="jquery-slim.min.js"><\/script>')
+</script>
+<script src="js/place_order.js"></script>
+{{!-- <script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/holder.min.js"></script> --}}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VCards 
+        {{#if title}}
+        - {{title}}
+        {{/if}}
+    </title>
+    <link rel="icon" href="icons\favicon.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="css\bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    {{#if login}}
+    <link href="css\signin.css" rel="stylesheet">
+    {{else if place_order}}
+    <link href="css\place_order.css" rel="stylesheet">
+    {{else if billing}}
+    <link rel="stylesheet" href="css/billing.css">
+    {{else if admin}}
+    {{!-- <link href="bootstrap.css" rel="stylesheet"> --}}
+    <link href="css/sidebar.css" rel="stylesheet">
+    {{/if}}
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/addcard.css" rel="stylesheet">
+    {{#if profile}}
+    <link href="css/profile.css" rel="stylesheet">
+    {{/if}}
+    <link href="css/sticky-footer.css" rel="stylesheet">
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex flex-column">
+     <!--header-->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a href="/"><img src="img\logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    {{#if admin}}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/admin/dashboard">Dashboard <span class="sr-only">(current)</span></a>
+                        </li>
+                    {{else}}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link hide" href="/admin/login">Admin Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/gallery">Gallery <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contactus.html">Contact Us <span class="sr-only">(current)</span></a>
+                        </li>
+                    
+                    {{/if}}
+                </ul>
+                {{#if logged}}
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="{{#if doc.profile_pic}}uploaded/user_profile/{{doc.profile_pic}}{{else}}img\default-user.png{{/if}}" width="40" height="40" class="rounded-circle">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/profile">Profile</a>
+                            <a class="dropdown-item" href="/myorders">My Orders</a>
+                            <form  method="POST" action="/logout?_method=DELETE">
+                                <button class="dropdown-item" type="submit">Logout
+
+                                </button>
+                                </form>
+                        </div>
+                    </li>
+                </ul>
+                {{else if admin}}
+                
+                {{else}}
+                <ul>
+                    <a class="sign" href="/login"><img src="img\icons8-person-30.png">Signin | Signup</a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                </ul>
+                {{/if}}
+                <form class="form-inline mt-2 mt-md-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+
+    {{{body}}}
+
+    <!--Footer-->
+    {{#if login}}
+    {{else if billing}}
+    {{else if myorders}}
+    {{else if admin}}
+    {{else}}
+        <footer class="footer">
+        <div class="container">
+            <img src="img\logo.png">
+            <a href="Gallery.html">Gallery</a>
+            <a href="Contactus.html">Contact Us</a>
+            <img class="photo" src="img\Screenshot_2021-04-28 Editor FreeLogoDesign.png">
+            <p>| &copy; 2021 VCard's, inc</p>
+        </div>
+    </footer>
+    {{/if}}
+    </div>
+
+     <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="jquery-slim.min.js"><\/script>')
+    </script>
+    <script src="js\popper.min.js"></script>
+    <script src="js\bootstrap.min.js"></script>
+    <script src="js\holder.min.js"></script>
+    
+</body>
+</html>
